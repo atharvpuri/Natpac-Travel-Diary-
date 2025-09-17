@@ -1,0 +1,7 @@
+{
+  "name": "NATPAC Travel Diary",
+  "description": "A travel diary application for NATPAC to collect trip-related information from users for transportation planning purposes. The app captures trip details like origin, destination, time, and mode of transport to establish travel patterns and trip chains.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NATPAC Travel Diary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1"
+  }
+}
+</script>
+  <style>
+    @keyframes fade-in-up {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .animate-fade-in-up {
+      animation: fade-in-up 0.5s ease-out forwards;
+    }
+    /* Leaflet container height */
+    .leaflet-container {
+        height: 100%;
+        width: 100%;
+    }
+    /* Custom Map Marker Styles */
+    .map-pin {
+      width: 30px;
+      height: 30px;
+      border-radius: 50% 50% 50% 0;
+      position: absolute;
+      transform: rotate(-45deg);
+      left: 50%;
+      top: 50%;
+      margin: -15px 0 0 -15px;
+      border: 2px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .map-pin::after {
+      content: '';
+      width: 14px;
+      height: 14px;
+      margin: 6px 0 0 6px;
+      background: #FFFFFF;
+      position: absolute;
+      border-radius: 50%;
+    }
+    .start-pin { background-color: #22c55e; /* green-500 */ }
+    .end-pin { background-color: #ef4444; /* red-500 */ }
+    .current-pos-marker {
+        width: 20px;
+        height: 20px;
+        background-color: #3b82f6; /* blue-500 */
+        border-radius: 50%;
+        border: 4px solid white;
+        box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .leaflet-marker-draggable {
+      cursor: move !important;
+    }
+  </style>
+</head>
+  <body class="bg-slate-50">
+    <div id="root"></div>
+  </body>
+</html>
